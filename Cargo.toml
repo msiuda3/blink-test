@@ -1,0 +1,14 @@
+[package]
+name = "blink-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+esp-idf-hal = "0.45.2"
+esp-idf-sys = { version = "0.36.1", features = ["binstart"] }
+
+[build-dependencies]
+embuild = "0.31.4"
+
+[build]
+target = "xtensa-esp32-espidf"

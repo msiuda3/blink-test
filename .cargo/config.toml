@@ -1,0 +1,13 @@
+[build]
+target = "xtensa-esp32-espidf"
+
+[target.xtensa-esp32-espidf]
+linker = "ldproxy"
+rustflags = ["--cfg", "espidf_time64"]
+
+[env]
+MCU = "esp32"
+
+[alias]
+espbuild = "build --target xtensa-esp32-espidf -Z build-std=std,panic_abort"
+flash = "espflash flash target/xtensa-esp32-espidf/debug/blink-test"
